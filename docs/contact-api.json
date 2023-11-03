@@ -1,0 +1,9 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "Contact API",
+    "version": "1.0"
+  },
+  "servers": [{ "url": "http://localhost:6060" }],
+  "paths": {}
+}

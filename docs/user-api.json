@@ -1,0 +1,63 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "User API",
+    "version": "1.0"
+  },
+  "servers": [{ "url": "http://localhost:6060" }],
+  "paths": {
+    "/api/user": {
+      "post": {
+        "description": "register user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/login": {
+      "post": {
+        "description": "login user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/current": {
+      "get": {
+        "description": "get current user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "description": "update user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user/logout": {
+      "delete": {
+        "description": "logout user",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  }
+}
