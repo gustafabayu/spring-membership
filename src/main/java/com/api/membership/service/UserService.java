@@ -10,12 +10,9 @@ import org.springframework.web.server.ResponseStatusException;
 
 import com.api.membership.entity.User;
 import com.api.membership.model.RegisterUserRequest;
+import com.api.membership.model.UserResponse;
 import com.api.membership.repository.UserRepository;
 import com.api.membership.security.BCrypt;
-
-import jakarta.validation.ConstraintViolation;
-import jakarta.validation.ConstraintViolationException;
-import jakarta.validation.Validator;
 
 @Service
 public class UserService {
@@ -24,14 +21,11 @@ public class UserService {
     private UserRepository userRepository;
 
     @Autowired
-    private Validator validator;
+    private ValidationService validationService;
 
     @Transactional
     public void register(RegisterUserRequest request) {
-        Set<ConstraintViolation<RegisterUserRequest>> constraintViolations = validator.validate(request);
-        if (constraintViolations.size() != 0) {
-            throw new ConstraintViolationException(constraintViolations);
-        }
+        validationService.validate(request);
 
         if (userRepository.existsById(request.getUsername())) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username already registered");
@@ -43,5 +37,12 @@ public class UserService {
         user.setName(request.getName());
 
         userRepository.save(user);
+    }
+
+    public UserResponse get(User user) {
+        return UserResponse.builder()
+                .username(user.getUsername())
+                .name(user.getName())
+                .build();
     }
 }
