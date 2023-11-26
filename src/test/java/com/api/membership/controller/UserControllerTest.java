@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.api.membership.entity.User;
 import com.api.membership.model.RegisterUserRequest;
-import com.api.membership.model.TokenResponse;
+import com.api.membership.model.UpdateUserRequest;
 import com.api.membership.model.UserResponse;
 import com.api.membership.model.WebResponse;
 import com.api.membership.repository.UserRepository;
@@ -203,6 +203,65 @@ public class UserControllerTest {
 
                                                         });
                                         assertNotNull(response.getErrors());
+                                });
+        }
+
+        @Test
+        void updateUserUnauthorized() throws Exception {
+                UpdateUserRequest request = new UpdateUserRequest();
+
+                mockMvc.perform(
+                                patch("/api/users/current")
+                                                .accept(MediaType.APPLICATION_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(objectMapper.writeValueAsString(request)))
+                                .andExpectAll(
+                                                status().isUnauthorized())
+                                .andDo(result -> {
+                                        WebResponse<String> response = objectMapper.readValue(
+                                                        result.getResponse().getContentAsString(),
+                                                        new TypeReference<WebResponse<String>>() {
+
+                                                        });
+                                        assertNotNull(response.getErrors());
+                                });
+        }
+
+        @Test
+        void updateUserSuccess() throws Exception {
+                User user = new User();
+                user.setUsername("test");
+                user.setPassword(BCrypt.hashpw("test1234", BCrypt.gensalt()));
+                user.setName("Usertest");
+                user.setToken("test");
+                user.setTokenExpiredAt(System.currentTimeMillis() + 100000000000L);
+                userRepository.save(user);
+
+                UpdateUserRequest request = new UpdateUserRequest();
+                request.setName("coba");
+                request.setPassword("coba123");
+
+                mockMvc.perform(
+                                patch("/api/users/current")
+                                                .accept(MediaType.APPLICATION_JSON)
+                                                .contentType(MediaType.APPLICATION_JSON)
+                                                .content(objectMapper.writeValueAsString(request))
+                                                .header("X-API-TOKEN", "test"))
+                                .andExpectAll(
+                                                status().isOk())
+                                .andDo(result -> {
+                                        WebResponse<UserResponse> response = objectMapper.readValue(
+                                                        result.getResponse().getContentAsString(),
+                                                        new TypeReference<>() {
+
+                                                        });
+                                        assertNull(response.getErrors());
+                                        assertEquals("test", response.getData().getUsername());
+                                        assertEquals("coba", response.getData().getName());
+
+                                        User userDb = userRepository.findById("test").orElse(null);
+                                        assertNotNull(userDb);
+                                        assertTrue(BCrypt.checkpw("coba123", userDb.getPassword()));
                                 });
         }
 }
