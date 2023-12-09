@@ -1,4 +1,4 @@
-package com.api.membership.model;
+package com.api.membership.model.request;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

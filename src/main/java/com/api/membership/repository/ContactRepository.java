@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.stereotype.Repository;
 
-import com.api.membership.entity.Contact;
-import com.api.membership.entity.User;
+import com.api.membership.model.Contact;
+import com.api.membership.model.User;
 
 @Repository
 public interface ContactRepository extends JpaRepository<Contact, String>, JpaSpecificationExecutor<Contact> {

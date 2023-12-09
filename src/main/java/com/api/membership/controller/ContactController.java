@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.ContactResponse;
-import com.api.membership.model.CreateContactRequest;
-import com.api.membership.model.PagingResponse;
-import com.api.membership.model.SearchContactRequest;
-import com.api.membership.model.UpdateContactRequest;
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.CreateContactRequest;
+import com.api.membership.model.request.SearchContactRequest;
+import com.api.membership.model.request.UpdateContactRequest;
+import com.api.membership.model.response.ContactResponse;
+import com.api.membership.model.response.PagingResponse;
+import com.api.membership.model.response.WebResponse;
 import com.api.membership.service.ContactService;
 
 @RestController

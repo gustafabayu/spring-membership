@@ -1,6 +1,5 @@
-package com.api.membership.model;
+package com.api.membership.model.request;
 
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -12,19 +11,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateContactRequest {
+public class RegisterUserRequest {
 
     @NotBlank
     @Size(max = 100)
-    private String firstName;
+    private String username;
 
+    @NotBlank
     @Size(max = 100)
-    private String lastName;
-
+    private String password;
+    
+    @NotBlank
     @Size(max = 100)
-    @Email
-    private String email;
-
-    @Size(max = 100)
-    private String phone;
+    private String name;
 }

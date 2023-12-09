@@ -8,11 +8,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.LoginUserRequest;
-import com.api.membership.model.TokenResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.LoginUserRequest;
+import com.api.membership.model.response.TokenResponse;
 import com.api.membership.repository.UserRepository;
-import com.api.membership.security.BCrypt;
+import com.api.membership.service.security.BCrypt;
 
 @Service
 public class AuthService {

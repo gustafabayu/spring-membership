@@ -12,18 +12,18 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.LoginUserRequest;
-import com.api.membership.model.TokenResponse;
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.LoginUserRequest;
+import com.api.membership.model.response.TokenResponse;
+import com.api.membership.model.response.WebResponse;
 import com.api.membership.repository.UserRepository;
-import com.api.membership.security.BCrypt;
+import com.api.membership.service.security.BCrypt;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class AuthControllerTest {
+public class AuthTest {
 
         @Autowired
         private MockMvc mockMvc;

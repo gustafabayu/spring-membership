@@ -1,4 +1,4 @@
-package com.api.membership.entity;
+package com.api.membership.model;
 
 import java.util.List;
 

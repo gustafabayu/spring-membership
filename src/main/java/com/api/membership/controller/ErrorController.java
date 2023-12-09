@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.response.WebResponse;
 
 import jakarta.validation.ConstraintViolationException;
 

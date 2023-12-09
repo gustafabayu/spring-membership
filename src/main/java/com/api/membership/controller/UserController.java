@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.RegisterUserRequest;
-import com.api.membership.model.UpdateUserRequest;
-import com.api.membership.model.UserResponse;
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.RegisterUserRequest;
+import com.api.membership.model.request.UpdateUserRequest;
+import com.api.membership.model.response.UserResponse;
+import com.api.membership.model.response.WebResponse;
 import com.api.membership.service.UserService;
 
 @RestController

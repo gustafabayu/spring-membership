@@ -1,4 +1,4 @@
-package com.api.membership.model;
+package com.api.membership.model.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

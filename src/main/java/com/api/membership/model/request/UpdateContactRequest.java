@@ -1,4 +1,4 @@
-package com.api.membership.model;
+package com.api.membership.model.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

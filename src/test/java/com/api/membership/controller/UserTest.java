@@ -11,19 +11,19 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.RegisterUserRequest;
-import com.api.membership.model.UpdateUserRequest;
-import com.api.membership.model.UserResponse;
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.RegisterUserRequest;
+import com.api.membership.model.request.UpdateUserRequest;
+import com.api.membership.model.response.UserResponse;
+import com.api.membership.model.response.WebResponse;
 import com.api.membership.repository.UserRepository;
-import com.api.membership.security.BCrypt;
+import com.api.membership.service.security.BCrypt;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class UserControllerTest {
+public class UserTest {
 
         @Autowired
         private MockMvc mockMvc;

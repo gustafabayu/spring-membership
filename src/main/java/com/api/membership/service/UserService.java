@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.RegisterUserRequest;
-import com.api.membership.model.UpdateUserRequest;
-import com.api.membership.model.UserResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.RegisterUserRequest;
+import com.api.membership.model.request.UpdateUserRequest;
+import com.api.membership.model.response.UserResponse;
 import com.api.membership.repository.UserRepository;
-import com.api.membership.security.BCrypt;
+import com.api.membership.service.security.BCrypt;
 
 @Service
 public class UserService {

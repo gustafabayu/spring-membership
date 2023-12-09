@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.api.membership.entity.Contact;
-import com.api.membership.entity.User;
-import com.api.membership.model.ContactResponse;
-import com.api.membership.model.CreateContactRequest;
-import com.api.membership.model.SearchContactRequest;
-import com.api.membership.model.UpdateContactRequest;
+import com.api.membership.model.Contact;
+import com.api.membership.model.User;
+import com.api.membership.model.request.CreateContactRequest;
+import com.api.membership.model.request.SearchContactRequest;
+import com.api.membership.model.request.UpdateContactRequest;
+import com.api.membership.model.response.ContactResponse;
 import com.api.membership.repository.ContactRepository;
 
 import jakarta.persistence.criteria.Predicate;

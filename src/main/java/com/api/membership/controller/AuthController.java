@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.membership.entity.User;
-import com.api.membership.model.LoginUserRequest;
-import com.api.membership.model.TokenResponse;
-import com.api.membership.model.WebResponse;
+import com.api.membership.model.User;
+import com.api.membership.model.request.LoginUserRequest;
+import com.api.membership.model.response.TokenResponse;
+import com.api.membership.model.response.WebResponse;
 import com.api.membership.service.AuthService;
 
 @RestController

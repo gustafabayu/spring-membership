@@ -1,4 +1,4 @@
-package com.api.membership.model;
+package com.api.membership.model.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -13,11 +13,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class CreateAddressRequest {
-
+public class UpdateAddressRequest {
+    
     @JsonIgnore
     @NotBlank
     private String contactId;
+
+    @JsonIgnore
+    @NotBlank
+    private String addressId;
 
     @Size(max = 100)
     private String street;
@@ -34,5 +38,4 @@ public class CreateAddressRequest {
 
     @Size(max = 10)
     private String postalCode;
-
 }

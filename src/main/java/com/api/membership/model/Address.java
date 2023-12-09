@@ -1,4 +1,4 @@
-package com.api.membership.entity;
+package com.api.membership.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

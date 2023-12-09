@@ -1,4 +1,4 @@
-package com.api.membership.resolver;
+package com.api.membership.service.resolver;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.MethodParameter;
@@ -11,7 +11,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.server.ResponseStatusException;
 
-import com.api.membership.entity.User;
+import com.api.membership.model.User;
 import com.api.membership.repository.UserRepository;
 
 import jakarta.servlet.http.HttpServletRequest;
